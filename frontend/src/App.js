@@ -48,9 +48,11 @@ const App = () => {
         <Routes>
           {/* /login */}
 
-          <Route exact path="/" element={<TaskList />} />
-          <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
+          {/* <Route exact path="/" element={<TaskList />} />
+          <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} /> */}
 
+          <Route path="/" element={user ? <TaskList /> : <Navigate to="/login" />} index={true} />
+          <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
 
 
         </Routes>
